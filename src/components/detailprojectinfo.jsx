@@ -1,22 +1,26 @@
-import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
-import React, { useState } from 'react';
-import { useNavigation } from '@react-navigation/native'; 
-import Downarrowicon1 from '../assets/icons/downicon';
+import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
+import React, {useState} from 'react';
+import {useNavigation} from '@react-navigation/native';
+import Downarrowicon1 from '../assets/icons/Downicon';
 
-export default function DetailProjectInfoCard({ status }) {
-  const navigation = useNavigation(); 
+export default function DetailProjectInfoCard({status}) {
+  const navigation = useNavigation();
   const [isExpanded, setIsExpanded] = useState(false);
-  
+
   const handleToggle = () => {
     setIsExpanded(!isExpanded);
   };
 
-  const navigateToWireframes = (title) => {
-    navigation.navigate('Wireframes', { title, status }); 
+  const navigateToWireframes = title => {
+    navigation.navigate('Wireframes', {title, status});
   };
 
-  const yetToStartContainer = status === 'Completed' ? styles.yetToStartContainer1 : styles.yetToStartContainer2;
-  const statusTextStyle = status === 'Completed' ? styles.completedText : styles.yetToStartText;
+  const yetToStartContainer =
+    status === 'Completed'
+      ? styles.yetToStartContainer1
+      : styles.yetToStartContainer2;
+  const statusTextStyle =
+    status === 'Completed' ? styles.completedText : styles.yetToStartText;
 
   return (
     <View style={styles.cardContainer}>
@@ -36,7 +40,7 @@ export default function DetailProjectInfoCard({ status }) {
 
       <Text
         style={styles.longText}
-        numberOfLines={isExpanded ? undefined : 2} 
+        numberOfLines={isExpanded ? undefined : 2}
         ellipsizeMode="tail">
         At vero eos et accusamus et iusto odio dignissimos ducimus qui
         blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
@@ -97,7 +101,7 @@ const styles = StyleSheet.create({
   },
   cardText: {
     fontSize: 14,
-    fontFamily:"Inter_18pt-ExtraBold",
+    fontFamily: 'Inter_18pt-ExtraBold',
     color: '#333',
   },
   dot: {
@@ -127,7 +131,7 @@ const styles = StyleSheet.create({
     borderColor: '#0c356a',
     borderRadius: 5,
     padding: 5,
-    backgroundColor:'#d0f5d0',
+    backgroundColor: '#d0f5d0',
     marginLeft: 10,
   },
   yetToStartText: {
@@ -142,13 +146,13 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#6A7175',
     marginTop: 10,
-    fontFamily:'NotoSans-Regular'
+    fontFamily: 'NotoSans-Regular',
   },
   longText: {
     fontSize: 14,
     color: '#4E585E',
     marginTop: 5,
-    fontFamily:'NotoSans-Medium'
+    fontFamily: 'NotoSans-Medium',
   },
   toggleContainer: {
     flexDirection: 'row',
@@ -167,13 +171,13 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   dateInfo: {
-    display: "flex",
-    flexDirection: "column",
-    fontFamily:'NotoSans-Medium'
+    display: 'flex',
+    flexDirection: 'column',
+    fontFamily: 'NotoSans-Medium',
   },
   statusText: {
     fontSize: 14,
     color: '#8f9598',
-    fontFamily:'NotoSans-Medium'
+    fontFamily: 'NotoSans-Medium',
   },
 });

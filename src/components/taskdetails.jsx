@@ -1,15 +1,15 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import React, { useState } from 'react';
-import { useNavigation } from '@react-navigation/native';
-import Header from './textwithnumber';
-import Downarrowicon1 from '../assets/icons/downicon';
-import Listtask from './listtask';
-import BottomModal from './bottommodal';
+import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import React, {useState} from 'react';
+import {useNavigation} from '@react-navigation/native';
+import Header from './TextWithNumber';
+import Downarrowicon1 from '../assets/icons/Downicon';
+import Listtask from './ListTask';
+import BottomModal from './BottomModal';
 
 export default function Taskdetails() {
   const navigation = useNavigation();
   const [modalVisible, setModalVisible] = useState(false);
-  const [selectedStatus, setSelectedStatus] = useState('All'); 
+  const [selectedStatus, setSelectedStatus] = useState('All');
 
   return (
     <View style={styles.cardContainer}>
@@ -22,7 +22,7 @@ export default function Taskdetails() {
         />
         <TouchableOpacity onPress={() => setModalVisible(true)}>
           <View style={styles.rowContainer}>
-            <Text style={styles.descriptionText}>{selectedStatus}</Text> 
+            <Text style={styles.descriptionText}>{selectedStatus}</Text>
             <Downarrowicon1 />
           </View>
         </TouchableOpacity>
@@ -30,9 +30,11 @@ export default function Taskdetails() {
 
       <TouchableOpacity
         onPress={() =>
-          navigation.navigate('Wireframes', { title: 'Wireframes', status: 'Yet to Start' })
-        }
-      >
+          navigation.navigate('Wireframes', {
+            title: 'Wireframes',
+            status: 'Yet to Start',
+          })
+        }>
         <Listtask
           title="Wireframes"
           id="0214"
@@ -46,9 +48,11 @@ export default function Taskdetails() {
       <View style={styles.lines}></View>
       <TouchableOpacity
         onPress={() =>
-          navigation.navigate('Wireframes', { title: 'Inspection', status: 'In-Progress' })
-        }
-      >
+          navigation.navigate('Wireframes', {
+            title: 'Inspection',
+            status: 'In-Progress',
+          })
+        }>
         <Listtask
           title="Inspection"
           id="0212"
@@ -62,9 +66,11 @@ export default function Taskdetails() {
       <View style={styles.lines}></View>
       <TouchableOpacity
         onPress={() =>
-          navigation.navigate('Wireframes', { title: 'Base Layout', status: 'Completed' })
-        }
-      >
+          navigation.navigate('Wireframes', {
+            title: 'Base Layout',
+            status: 'Completed',
+          })
+        }>
         <Listtask
           title="Base layout"
           id="0201"
@@ -91,7 +97,7 @@ const styles = StyleSheet.create({
     margin: 10,
     borderRadius: 15,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
+    shadowOffset: {width: 0, height: 2},
     shadowOpacity: 0.3,
     shadowRadius: 4,
     elevation: 5,

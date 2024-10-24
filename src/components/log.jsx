@@ -1,7 +1,7 @@
-import { StyleSheet, View, Text, FlatList } from 'react-native';
-import React, { useState } from 'react';
-import Header from './textwithnumber';
-import Addicon1 from '../assets/icons/addicon';
+import {StyleSheet, View, Text, FlatList} from 'react-native';
+import React, {useState} from 'react';
+import Header from './TextWithNumber';
+import Addicon1 from '../assets/icons/Addicon';
 import ExpenseModal from './ExpenseModal';
 
 export default function Logexpense() {
@@ -52,7 +52,7 @@ export default function Logexpense() {
       <FlatList
         data={expenses}
         keyExtractor={(item, index) => index.toString()}
-        renderItem={({ item }) => (
+        renderItem={({item}) => (
           <View style={styles.expenseDetailsContainer}>
             <Text style={styles.expenseName}>{item.name}</Text>
             <View style={styles.dot} />
@@ -85,8 +85,8 @@ const styles = StyleSheet.create({
   },
   separator: {
     height: 1,
-    backgroundColor: 'grey',
-    marginVertical: 5,
+    backgroundColor: '#D9DBDD',
+    marginVertical: 16,
   },
   noDataContainer: {
     flex: 1,
@@ -125,15 +125,18 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   expenseName: {
-    fontSize: 16,
-    color: '#333',
+    fontSize: 14,
+    color: '#4E585E',
+    fontFamily: 'Inter_18pt-SemiBold',
   },
   expenseDate: {
-    fontSize: 14,
-    color: '#666',
+    fontSize: 12,
+    color: '#6A7175',
+    fontFamily: 'NotoSans-Regular',
   },
   expenseAmount: {
-    fontSize: 16,
-    color: '#000',
+    fontSize: 12,
+    color: '#6A7175',
+    fontFamily: 'NotoSans-Regular',
   },
 });

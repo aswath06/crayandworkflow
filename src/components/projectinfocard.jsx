@@ -1,6 +1,6 @@
 import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
-import ProgressBar from './linearprogress';
+import ProgressBar from './LinearProgress';
 
 export default function ProjectInfoCard() {
   const [isExpanded, setIsExpanded] = useState(false);

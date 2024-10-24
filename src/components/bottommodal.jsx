@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import { Modal, View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import Closeicon from '../assets/icons/closeicon';
-import Tickicon from '../assets/icons/tick';
+import React, {useState} from 'react';
+import {Modal, View, Text, TouchableOpacity, StyleSheet} from 'react-native';
+import Closeicon from '../assets/icons/Closeicon';
+import Tickicon from '../assets/icons/Tick';
 
-export default function BottomModal({ visible, onClose, setSelectedStatus }) {
+export default function BottomModal({visible, onClose, setSelectedStatus}) {
   const [selectedStatusLocal, setSelectedStatusLocal] = useState(''); // Local state
 
-  const handleStatusPress = (status) => {
+  const handleStatusPress = status => {
     setSelectedStatusLocal(status);
-    setSelectedStatus(status); 
-    onClose(); 
+    setSelectedStatus(status);
+    onClose();
   };
 
   return (
@@ -17,8 +17,7 @@ export default function BottomModal({ visible, onClose, setSelectedStatus }) {
       transparent={true}
       visible={visible}
       animationType="slide"
-      onRequestClose={onClose}
-    >
+      onRequestClose={onClose}>
       <View style={styles.modalContainer}>
         <View style={styles.modalContent}>
           <View style={styles.header}>
@@ -28,14 +27,15 @@ export default function BottomModal({ visible, onClose, setSelectedStatus }) {
             </TouchableOpacity>
           </View>
 
-          {['All', 'Yet to Start', 'In-Progress', 'Completed'].map((status) => (
-            <TouchableOpacity key={status} onPress={() => handleStatusPress(status)}>
+          {['All', 'Yet to Start', 'In-Progress', 'Completed'].map(status => (
+            <TouchableOpacity
+              key={status}
+              onPress={() => handleStatusPress(status)}>
               <View
                 style={[
                   styles.statusContainer,
                   selectedStatusLocal === status && styles.selectedStatus,
-                ]}
-              >
+                ]}>
                 <Text style={styles.statusText}>{status}</Text>
                 {selectedStatusLocal === status && <Tickicon />}
               </View>

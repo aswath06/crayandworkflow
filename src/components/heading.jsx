@@ -1,8 +1,11 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import React from 'react';
-import Lefticons1 from '../assets/icons/lefticon';
+import Lefticons1 from '../assets/icons/Lefticon';
+import { useNavigation } from '@react-navigation/native';
 
-export default function Heading({ title, navigation }) { 
+export default function Heading({ title }) { 
+  const navigation = useNavigation(); 
+
   const handleBackPress = () => {
     navigation.goBack();
   };
@@ -29,12 +32,8 @@ const styles = StyleSheet.create({
   headingText: {
     paddingLeft: 20,
     fontSize: 18,
-    letterSpacing:1,
-
+    letterSpacing: 1,
     color: 'black',
-    //fontFamily:"NotoSans_Condensed-Regular"
-    fontFamily:"Inter_18pt-ExtraBold",
-    //fontFamily:"NotoSans_SemiCondensed-SemiBold",
-    //fontFamily:"NotoSans_Condensed-Medium"
+    fontFamily: "Inter_18pt-ExtraBold",
   },
 });

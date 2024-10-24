@@ -1,12 +1,12 @@
-import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
+import {StyleSheet, View, TouchableOpacity, Text} from 'react-native';
 import React from 'react';
-import Tickicon from '../assets/icons/tick'; 
+import Tickicon from '../assets/icons/Tick';
 
-const CustomCheckbox = ({ label, isChecked, onToggle }) => {
+const CustomCheckbox = ({label, isChecked, onToggle}) => {
   return (
     <TouchableOpacity style={styles.checkboxContainer} onPress={onToggle}>
       <View style={[styles.checkbox, isChecked && styles.checkedCheckbox]}>
-        {isChecked && <Tickicon fill="white" />} 
+        {isChecked && <Tickicon fill="white" />}
       </View>
       <Text style={styles.checkboxText}>{label}</Text>
     </TouchableOpacity>
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   checkboxText: {
     fontSize: 12,
     color: '#4E585E',
-    fontFamily:"NotoSans-Medium"
+    fontFamily: 'NotoSans-Medium',
   },
 });
 

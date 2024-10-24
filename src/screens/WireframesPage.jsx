@@ -1,12 +1,12 @@
-import { StyleSheet, ScrollView, StatusBar } from 'react-native';
+import {StyleSheet, ScrollView, StatusBar} from 'react-native';
 import React from 'react';
-import { useRoute } from '@react-navigation/native';
-import Heading from '../components/heading';
-import DetailProjectInfoCard from '../components/detailprojectinfo';
-import Checkbox from '../components/checklist';
-import Logexpense from '../components/log';
-import Members from '../components/members';
-import Comments from '../components/comments';
+import {useRoute} from '@react-navigation/native';
+import Heading from '../components/Heading';
+import DetailProjectInfoCard from '../components/DetailProjectInfo';
+import Checkbox from '../components/CheckList';
+import Logexpense from '../components/Log';
+import Members from '../components/Members';
+import Comments from '../components/Comments';
 
 export default function WireframesPage() {
   const route = useRoute();
@@ -15,7 +15,7 @@ export default function WireframesPage() {
 
   return (
     <>
-      <StatusBar barStyle="dark-content" backgroundColor="#f0f3f6" /> 
+      <StatusBar barStyle="dark-content" backgroundColor="#f0f3f6" />
       <ScrollView style={styles.container}>
         <Heading title={title} />
         <DetailProjectInfoCard status={status} />

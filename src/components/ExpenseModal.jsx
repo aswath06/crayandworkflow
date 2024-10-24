@@ -8,10 +8,10 @@ import {
   TouchableOpacity,
   FlatList,
 } from 'react-native';
-import Downarrowicon1 from '../assets/icons/downicon';
-import Calendericon from '../assets/icons/calender';
-import Shareicon1 from '../assets/icons/shareicon';
-import Radiobuttom1 from '../assets/icons/radiubutton';
+import Downarrowicon1 from '../assets/icons/Downicon';
+import Calendericon from '../assets/icons/Calender';
+import Shareicon1 from '../assets/icons/Shareicon';
+import Radiobuttom1 from '../assets/icons/Radiubutton';
 
 const ExpenseModal = ({visible, onClose, onSubmit}) => {
   const [expenseName, setExpenseName] = useState('');
@@ -19,8 +19,10 @@ const ExpenseModal = ({visible, onClose, onSubmit}) => {
   const [expenseAmount, setExpenseAmount] = useState('');
   const [currency, setCurrency] = useState('AED');
   const [category, setCategory] = useState('Education');
-  const [isCurrencyDropdownVisible, setIsCurrencyDropdownVisible] = useState(false);
-  const [isCategoryDropdownVisible, setIsCategoryDropdownVisible] = useState(false);
+  const [isCurrencyDropdownVisible, setIsCurrencyDropdownVisible] =
+    useState(false);
+  const [isCategoryDropdownVisible, setIsCategoryDropdownVisible] =
+    useState(false);
 
   const handleSubmit = () => {
     const expense = {
@@ -46,12 +48,12 @@ const ExpenseModal = ({visible, onClose, onSubmit}) => {
     setIsCategoryDropdownVisible(!isCategoryDropdownVisible);
   };
 
-  const handleCurrencySelect = (selectedCurrency) => {
+  const handleCurrencySelect = selectedCurrency => {
     setCurrency(selectedCurrency);
     setIsCurrencyDropdownVisible(false);
   };
 
-  const handleCategorySelect = (selectedCategory) => {
+  const handleCategorySelect = selectedCategory => {
     setCategory(selectedCategory);
     setIsCategoryDropdownVisible(false);
   };
@@ -69,7 +71,6 @@ const ExpenseModal = ({visible, onClose, onSubmit}) => {
         <View style={styles.modalContent}>
           <Text style={styles.modalTitle}>Create Expense</Text>
 
-
           <View style={styles.inputContainer}>
             <Text style={styles.label}>Expense Name</Text>
             <TextInput
@@ -79,7 +80,6 @@ const ExpenseModal = ({visible, onClose, onSubmit}) => {
               style={styles.input}
             />
           </View>
-
 
           <View style={styles.inputContainer}>
             <Text style={styles.label}>Date</Text>
@@ -97,25 +97,24 @@ const ExpenseModal = ({visible, onClose, onSubmit}) => {
           </View>
 
           <View style={styles.amountcry}>
-
             <View style={[styles.inputContainer1, {zIndex: 2}]}>
               <Text style={styles.label}>Currency</Text>
-              <View style={styles.row}>
+              <TouchableOpacity
+                onPress={toggleCurrencyDropdown}
+                style={styles.row}>
                 <TextInput
                   placeholder="Currency"
                   value={currency}
                   editable={false}
                   style={[styles.input, {flex: 1}]}
                 />
-                <TouchableOpacity onPress={toggleCurrencyDropdown}>
-                  <Downarrowicon1 />
-                </TouchableOpacity>
-              </View>
+                <Downarrowicon1 />
+              </TouchableOpacity>
               {isCurrencyDropdownVisible && (
                 <View style={styles.dropdown}>
                   <FlatList
                     data={currencies}
-                    keyExtractor={(item) => item}
+                    keyExtractor={item => item}
                     renderItem={({item}) => (
                       <TouchableOpacity
                         style={styles.dropdownItem}
@@ -140,25 +139,24 @@ const ExpenseModal = ({visible, onClose, onSubmit}) => {
             </View>
           </View>
 
-
           <View style={[styles.inputContainer, {zIndex: 1}]}>
             <Text style={styles.label}>Category</Text>
-            <View style={styles.row}>
+            <TouchableOpacity
+              onPress={toggleCategoryDropdown}
+              style={styles.row}>
               <TextInput
                 placeholder="Select Category"
                 value={category}
                 editable={false}
                 style={[styles.input, {flex: 1}]}
               />
-              <TouchableOpacity onPress={toggleCategoryDropdown}>
-                <Downarrowicon1 />
-              </TouchableOpacity>
-            </View>
+              <Downarrowicon1 />
+            </TouchableOpacity>
             {isCategoryDropdownVisible && (
               <View style={styles.dropdown}>
                 <FlatList
                   data={categories}
-                  keyExtractor={(item) => item}
+                  keyExtractor={item => item}
                   renderItem={({item}) => (
                     <TouchableOpacity
                       style={styles.dropdownItem}
@@ -170,16 +168,15 @@ const ExpenseModal = ({visible, onClose, onSubmit}) => {
               </View>
             )}
           </View>
+
           <View style={styles.Radiobuttom}>
             <View>
-              <Radiobuttom1/>
+              <Radiobuttom1 />
             </View>
             <View>
-            <Text style={styles.Radiobuttomtext}>Billable</Text>
+              <Text style={styles.Radiobuttomtext}>Billable</Text>
             </View>
-
           </View>
-
 
           <View style={styles.inputContainertextfeild}>
             <TextInput
@@ -189,15 +186,15 @@ const ExpenseModal = ({visible, onClose, onSubmit}) => {
               style={styles.input}
             />
           </View>
+
           <View style={styles.uploadfile}>
             <View style={styles.Shareicon1}>
-              <Shareicon1/>
+              <Shareicon1 />
             </View>
-            <View style = {styles.uploadtext}>
-              <Text>Upload Recipits</Text>
+            <View style={styles.uploadtext}>
+              <Text>Upload Receipts</Text>
             </View>
           </View>
-
 
           <View style={styles.buttonRow}>
             <TouchableOpacity
@@ -235,35 +232,34 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15,
   },
-  Radiobuttom:{
-    display:"flex",
-    flexDirection:"row",
-    width:'100%',
-    gap:7
+  Radiobuttom: {
+    display: 'flex',
+    flexDirection: 'row',
+    width: '100%',
+    gap: 7,
   },
-  Radiobuttomtext:{
-    color:"black"
+  Radiobuttomtext: {
+    color: 'black',
   },
-  uploadfile:{
-    width:'100%',
-    display:"flex",
-    flexDirection:"row",
-    borderWidth:1,
-    borderStyle:'dotted',
-    borderRadius:5,
-    padding:15,
-    alignItems:'center',
+  uploadfile: {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    borderWidth: 1,
+    borderStyle: 'dotted',
+    borderRadius: 5,
+    padding: 15,
+    alignItems: 'center',
   },
-  Shareicon1:{
-    backgroundColor:'#d7e3ff',
-    padding:10,
-    borderRadius:10,
-    marginRight:20,
+  Shareicon1: {
+    backgroundColor: '#d7e3ff',
+    padding: 10,
+    borderRadius: 10,
+    marginRight: 20,
   },
-  uploadtext:{
-    fontWeight:"bold",
-    color:"black"
-
+  uploadtext: {
+    fontWeight: 'bold',
+    color: 'black',
   },
   row: {
     flexDirection: 'row',
@@ -279,9 +275,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 10,
     color: 'black',
-    alignSelf: 'flex-start',  
+    alignSelf: 'flex-start',
   },
-  
   label: {
     fontSize: 12,
     fontWeight: '500',
@@ -313,61 +308,58 @@ const styles = StyleSheet.create({
     padding: 2,
     gap: 12,
     width: '48%',
-    zIndex: 1, 
+    zIndex: 1,
   },
   input: {
     paddingLeft: 10,
     height: 40,
     borderWidth: 0,
     color: 'black',
-    fontSize:10,
-  },
-  dropdown: {
-    backgroundColor: '#f0f3f6',
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 5,
-    position: 'absolute',
-    top: 50,
-    width: '100%',
-    zIndex: 999, 
-  },
-  dropdownItem: {
-    padding: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
-  },
-  dropdownItemText: {
-    color: 'black',
   },
   buttonRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    bottom: 10,
-    marginTop: 10,
+    width: '100%',
+    marginTop: 20,
   },
   button: {
-    flex: 1,
-    height: 50,
-    justifyContent: 'center',
-    alignItems: 'center',
     borderRadius: 5,
-    marginHorizontal: 5,
+    padding: 10,
+    width: '48%',
   },
   cancelButton: {
+    borderColor: '#0C356A',
     borderWidth: 1,
-    borderColor: '#2a4e7d',
   },
   submitButton: {
-    backgroundColor: '#0c356a',
+    backgroundColor: '#0C356A',
+    height: 48,
   },
   buttonText: {
-    color: '#2a4e7d',
+    textAlign: 'center',
+    color: 'black',
     fontWeight: 'bold',
   },
   buttonText1: {
+    textAlign: 'center',
     color: 'white',
     fontWeight: 'bold',
+  },
+  dropdown: {
+    position: 'absolute',
+    backgroundColor: 'white',
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 5,
+    width: '100%',
+    zIndex: 1,
+    marginTop: 5,
+  },
+  dropdownItem: {
+    padding: 10,
+  },
+  dropdownItemText: {
+    color: 'black',
   },
 });
 

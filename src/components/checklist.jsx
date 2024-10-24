@@ -1,18 +1,23 @@
-import { StyleSheet, View } from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import React from 'react';
-import Header from './textwithnumber'; 
-import CustomCheckbox from './checkbox'; 
+import Header from './TextWithNumber';
+import CustomCheckbox from './CheckBox';
 
 export default function Checkbox() {
-  const [checkedItems, setCheckedItems] = React.useState([false, false, false, false]);
+  const [checkedItems, setCheckedItems] = React.useState([
+    false,
+    false,
+    false,
+    false,
+  ]);
   const labels = [
-    "Creating IA for project management",
-    "Flow chart ideation",
-    "UI layout Setup",
-    "Basic UI components"
+    'Creating IA for project management',
+    'Flow chart ideation',
+    'UI layout Setup',
+    'Basic UI components',
   ];
 
-  const handleToggle = (index) => {
+  const handleToggle = index => {
     const newCheckedItems = [...checkedItems];
     newCheckedItems[index] = !newCheckedItems[index];
     setCheckedItems(newCheckedItems);
@@ -20,22 +25,30 @@ export default function Checkbox() {
 
   return (
     <View style={styles.container}>
-      <Header title="Check List" count={4} headerFontSize={14} countFontSize={14} />
+      <Header
+        title="Check List"
+        count={4}
+        headerFontSize={14}
+        countFontSize={14}
+      />
 
       {checkedItems.map((isChecked, index) => (
-        <View 
-          key={index} 
+        <View
+          key={index}
           style={[
-            index === checkedItems.length - 1 && styles.lastCheckbox, 
-            index === 0 && styles.firstCheckbox // Add top padding for the first checkbox
-          ]}
-        >
+            index === checkedItems.length - 1 && styles.lastCheckbox,
+            index === 0 && styles.firstCheckbox, // Add top padding for the first checkbox
+          ]}>
           <CustomCheckbox
             label={labels[index]}
             isChecked={isChecked}
             onToggle={() => handleToggle(index)}
           />
-          {index < checkedItems.length - 1 && <View style={{ marginVertical: 16 }}><View style={styles.separator} /></View>}
+          {index < checkedItems.length - 1 && (
+            <View style={{marginVertical: 16}}>
+              <View style={styles.separator} />
+            </View>
+          )}
         </View>
       ))}
     </View>
@@ -63,9 +76,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#D9DBDD',
   },
   lastCheckbox: {
-    marginBottom: 18, 
+    marginBottom: 18,
   },
   firstCheckbox: {
-    paddingTop: 20, 
+    paddingTop: 20,
   },
 });

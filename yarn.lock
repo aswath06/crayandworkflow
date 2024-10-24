@@ -2514,6 +2514,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@remix-run/router@npm:1.20.0":
+  version: 1.20.0
+  resolution: "@remix-run/router@npm:1.20.0"
+  checksum: 6bff41117eabb867b17c89baa727580f0a431368b309cd9a1f69767aafa68ea9cac95ff0eeb86d37c2c8655f5cd7c6283d37ae5e6d93e94f648c6112ddb24ede
+  languageName: node
+  linkType: hard
+
 "@sideway/address@npm:^4.1.5":
   version: 4.1.5
   resolution: "@sideway/address@npm:4.1.5"
@@ -2919,6 +2926,13 @@ __metadata:
   version: 1.2.0
   resolution: "@ungap/structured-clone@npm:1.2.0"
   checksum: 4f656b7b4672f2ce6e272f2427d8b0824ed11546a601d8d5412b9d7704e83db38a8d9f402ecdf2b9063fc164af842ad0ec4a55819f621ed7e7ea4d1efcc74524
+  languageName: node
+  linkType: hard
+
+"@ungap/url-search-params@npm:^0.2.2":
+  version: 0.2.2
+  resolution: "@ungap/url-search-params@npm:0.2.2"
+  checksum: 779506cca3d36bc291e4e6eb0484e8bd87186cbe5bb6a6d37f17a866c47069d8a3a20b9331ef0a5c96f26b4db8210cf26c6e5a1f4a6c8be3be13a619e82cb93c
   languageName: node
   linkType: hard
 
@@ -8288,6 +8302,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-router-native@npm:^6.27.0":
+  version: 6.27.0
+  resolution: "react-router-native@npm:6.27.0"
+  dependencies:
+    "@ungap/url-search-params": ^0.2.2
+    react-router: 6.27.0
+  peerDependencies:
+    react: ">=16.8"
+    react-native: ">=0.44"
+  checksum: c3c4135afc89983f849c9cba5d06db0b2389ff8c1870ca5e3f7e1a38a4be22288dae46beda68b1388383fb1d98f53c68ad2cf99683e1d3d87b33a09bb29c01ad
+  languageName: node
+  linkType: hard
+
+"react-router@npm:6.27.0":
+  version: 6.27.0
+  resolution: "react-router@npm:6.27.0"
+  dependencies:
+    "@remix-run/router": 1.20.0
+  peerDependencies:
+    react: ">=16.8"
+  checksum: d22eedc33bcb11891b431655f90eed2d52c2fb3165ad11ca625f62970caf59c4859e6b1a3f92e78902b31ff1a8b2482ebf97ddebb82e9687d1f98730c14e04e6
+  languageName: node
+  linkType: hard
+
 "react-shallow-renderer@npm:^16.15.0":
   version: 16.15.0
   resolution: "react-shallow-renderer@npm:16.15.0"
@@ -9872,6 +9910,7 @@ __metadata:
     react-native-safe-area-context: ^4.11.1
     react-native-screens: ^3.34.0
     react-native-svg: ^15.8.0
+    react-router-native: ^6.27.0
     react-test-renderer: 18.3.1
     typescript: 5.0.4
   languageName: unknown

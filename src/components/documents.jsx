@@ -1,7 +1,7 @@
-import { StyleSheet, Text, View } from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import Header from './textwithnumber';
-import Righticon1 from '../assets/icons/righticon';
+import Header from './TextWithNumber';
+import Righticon1 from '../assets/icons/Righticon';
 
 export default function Documents() {
   return (

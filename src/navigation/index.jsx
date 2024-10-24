@@ -2,8 +2,8 @@ import {View, Text} from 'react-native';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import ProjectInfo from '../screens/projectinfo';
-import Taskdetails from '../components/taskdetails';
+import ProjectInfo from '../screens/ProjectInfo';
+import Taskdetails from '../components/TaskDetails';
 import WireframesPage from '../screens/WireframesPage';
 
 export const Navigation = () => {
