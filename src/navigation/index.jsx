@@ -5,6 +5,9 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import ProjectInfo from '../screens/ProjectInfo';
 import Taskdetails from '../components/TaskDetails';
 import WireframesPage from '../screens/WireframesPage';
+import Documents from '../components/Documents';
+import DocumentPage from '../screens/Documents';
+import Filepage from '../screens/Filepage';
 
 export const Navigation = () => {
   const Stack = createNativeStackNavigator();
@@ -24,6 +27,16 @@ export const Navigation = () => {
         <Stack.Screen
           name="Wireframes"
           component={WireframesPage}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="DocumentPage"
+          component={DocumentPage}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Filepage"
+          component={Filepage}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

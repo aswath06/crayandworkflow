@@ -1,11 +1,17 @@
-import {StyleSheet, Text, View} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import React from 'react';
+import { useNavigation } from '@react-navigation/native'; // Ensure you have navigation setup
 import Header from './TextWithNumber';
 import Righticon1 from '../assets/icons/Righticon';
 
 export default function Documents() {
+  const navigation = useNavigation();
+
   return (
-    <View style={styles.cardContainer}>
+    <TouchableOpacity 
+      style={styles.cardContainer} 
+      onPress={() => navigation.navigate('DocumentPage')} // Replace 'DocumentPage' with your document page route name
+    >
       <View>
         <Header
           title="Documents"
@@ -17,7 +23,7 @@ export default function Documents() {
       <View>
         <Righticon1 />
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 
