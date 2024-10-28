@@ -1,9 +1,9 @@
-import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
+import {StyleSheet, View, TouchableOpacity, Text} from 'react-native';
 import React from 'react';
-import Tickicon from '../assets/icons/tick';
-import Header from './textwithnumber';
+import Tickicon from '../assets/icons/Tick';
+import Header from './TextWithNumber';
 
-const CustomCheckbox = ({ label, isChecked, onToggle }) => {
+const CustomCheckbox = ({label, isChecked, onToggle}) => {
   return (
     <TouchableOpacity style={styles.checkboxContainer} onPress={onToggle}>
       <View style={[styles.checkbox, isChecked && styles.checkedCheckbox]}>
@@ -15,15 +15,20 @@ const CustomCheckbox = ({ label, isChecked, onToggle }) => {
 };
 
 const Checkbox = () => {
-  const [checkedItems, setCheckedItems] = React.useState([false, false, false, false]);
+  const [checkedItems, setCheckedItems] = React.useState([
+    false,
+    false,
+    false,
+    false,
+  ]);
   const labels = [
-    "Creating IA for project management",
-    "Flow chart ideation",
-    "UI layout Setup",
-    "Basic UI components"
+    'Creating IA for project management',
+    'Flow chart ideation',
+    'UI layout Setup',
+    'Basic UI components',
   ];
 
-  const handleToggle = (index) => {
+  const handleToggle = index => {
     const newCheckedItems = [...checkedItems];
     newCheckedItems[index] = !newCheckedItems[index];
     setCheckedItems(newCheckedItems);
@@ -31,21 +36,29 @@ const Checkbox = () => {
 
   return (
     <View style={styles.container}>
-      <Header title="Check List" count={4} headerFontSize={14} countFontSize={14} />
+      <Header
+        title="Check List"
+        count={4}
+        headerFontSize={14}
+        countFontSize={14}
+      />
       {checkedItems.map((isChecked, index) => (
         <View
           key={index}
           style={[
             index === checkedItems.length - 1 && styles.lastCheckbox,
-            index === 0 && styles.firstCheckbox
-          ]}
-        >
+            index === 0 && styles.firstCheckbox,
+          ]}>
           <CustomCheckbox
             label={labels[index]}
             isChecked={isChecked}
             onToggle={() => handleToggle(index)}
           />
-          {index < checkedItems.length - 1 && <View style={{ marginVertical: 16 }}><View style={styles.separator} /></View>}
+          {index < checkedItems.length - 1 && (
+            <View style={{marginVertical: 16}}>
+              <View style={styles.separator} />
+            </View>
+          )}
         </View>
       ))}
     </View>

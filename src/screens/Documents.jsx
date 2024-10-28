@@ -1,29 +1,27 @@
-import { StyleSheet, View, Text } from 'react-native';
+import {StyleSheet, View, Text} from 'react-native';
 import React from 'react';
-import Heading from '../components/heading';
+import Heading from '../components/Heading';
 import Folder from '../components/Folder';
-import Files from '../components/files';
+import Files from '../components/Files';
 
 export default function DocumentPage() {
   const folders = [
-    { name: 'Folder 01', documentCount: '04 documents' },
-    { name: 'Folder 02', documentCount: '02 documents' },
-    { name: 'Folder 03', documentCount: '04 documents' },
-    { name: 'Folder 04', documentCount: '02 documents' },
+    {name: 'Folder 01', documentCount: '04 documents'},
+    {name: 'Folder 02', documentCount: '02 documents'},
+    {name: 'Folder 03', documentCount: '04 documents'},
+    {name: 'Folder 04', documentCount: '02 documents'},
   ];
 
   const documents = [
-    { title: 'Files', createdDate: '12/13/23' },
-    { title: 'Files', createdDate: '12/13/23' },
-    { title: 'Files', createdDate: '12/13/23' },
+    {title: 'Files', createdDate: '12/13/23'},
+    {title: 'Files', createdDate: '12/13/23'},
+    {title: 'Files', createdDate: '12/13/23'},
   ];
 
   return (
     <View style={styles.container}>
       <Heading title="Documents" />
-      <Text style={styles.folderLabel}>
-        {folders.length} Folders
-      </Text>
+      <Text style={styles.folderLabel}>{folders.length} Folders</Text>
       <View style={styles.folderContainer}>
         {folders.map((folder, index) => (
           <Folder
@@ -33,9 +31,7 @@ export default function DocumentPage() {
           />
         ))}
       </View>
-      <Text style={styles.folderLabel}>
-        {documents.length} Documents
-      </Text>
+      <Text style={styles.folderLabel}>{documents.length} Documents</Text>
       {documents.map((document, index) => (
         <Files
           key={index}

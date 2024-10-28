@@ -1,28 +1,24 @@
-import { StyleSheet, Text, View } from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import Heading from '../components/heading';
-import Files from '../components/files';
-
+import Heading from '../components/Heading';
+import Files from '../components/Files';
 
 export default function Filepage() {
   const documents = [
-    { title: 'File 1', createdDate: '12/13/23' },
-    { title: 'File 2', createdDate: '12/14/23' },
-    { title: 'File 3', createdDate: '12/15/23' },
-    { title: 'File 4', createdDate: '12/13/23' },
-
+    {title: 'File 1', createdDate: '12/13/23'},
+    {title: 'File 2', createdDate: '12/14/23'},
+    {title: 'File 3', createdDate: '12/15/23'},
+    {title: 'File 4', createdDate: '12/13/23'},
   ];
 
   return (
     <View style={styles.container}>
       <Heading title="Folder 01" />
-      <Text style={styles.folderLabel}>
-        {documents.length} Documents
-      </Text>
+      <Text style={styles.folderLabel}>{documents.length} Documents</Text>
       {documents.map((document, index) => (
         <Files
           key={index}
-          imageSource={require('../assets/images/files.png')} 
+          imageSource={require('../assets/images/files.png')}
           title={document.title}
           createdDate={document.createdDate}
         />

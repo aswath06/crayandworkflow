@@ -1,7 +1,7 @@
 import {StyleSheet, View, Text, FlatList} from 'react-native';
 import React, {useState} from 'react';
-import Header from './textwithnumber';
-import Addicon1 from '../assets/icons/addicon';
+import Header from './TextWithNumber';
+import Addicon1 from '../assets/icons/AddIcon';
 import ExpenseModal from './ExpenseModal';
 
 export default function Logexpense() {

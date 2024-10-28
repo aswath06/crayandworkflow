@@ -1,12 +1,11 @@
-
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import ProjectInfo from '../screens/projectinfo';
-import Taskdetails from '../components/taskdetails';
+import ProjectInfo from '../screens/ProjectInfo';
+import Taskdetails from '../components/TaskDetails';
 import WireframesPage from '../screens/WireframesPage';
 import DocumentPage from '../screens/Documents';
-import Filepage from '../screens/Filepage';
+import Filepage from '../screens/FilePage';
 
 export const Navigation = () => {
   const Stack = createNativeStackNavigator();
