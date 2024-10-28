@@ -1,11 +1,10 @@
-import {View, Text} from 'react-native';
+
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import ProjectInfo from '../screens/ProjectInfo';
-import Taskdetails from '../components/TaskDetails';
+import ProjectInfo from '../screens/projectinfo';
+import Taskdetails from '../components/taskdetails';
 import WireframesPage from '../screens/WireframesPage';
-import Documents from '../components/Documents';
 import DocumentPage from '../screens/Documents';
 import Filepage from '../screens/Filepage';
 

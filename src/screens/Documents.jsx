@@ -1,6 +1,6 @@
 import { StyleSheet, View, Text } from 'react-native';
 import React from 'react';
-import Heading from '../components/Heading';
+import Heading from '../components/heading';
 import Folder from '../components/Folder';
 import Files from '../components/files';
 

@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import React from 'react';
-import Lefticons1 from '../assets/icons/Lefticon';
+import Lefticons1 from '../assets/icons/lefticon';
 import { useNavigation } from '@react-navigation/native';
 
 export default function Heading({ title }) { 

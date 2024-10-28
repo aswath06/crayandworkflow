@@ -1,6 +1,6 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import Righticon1 from '../assets/icons/Righticon';
+import Righticon1 from '../assets/icons/righticon';
 
 export default function Listtask({
   title,

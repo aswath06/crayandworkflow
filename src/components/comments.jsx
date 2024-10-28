@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, ScrollView } from 'react-native';
 import React, { useState } from 'react';
-import Chat from './Chat';
-import Senticon from '../assets/icons/Sent';
+import Chat from './chat';
+import Senticon from '../assets/icons/sent';
 
 export default function Comments() {
   const [userImages] = useState([

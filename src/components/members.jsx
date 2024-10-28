@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React, {useState} from 'react';
-import Personinfo from './PersonInfo';
+import Personinfo from './personinfo';
 
 const member1 = require('../assets/images/users/user1.jpeg');
 const member2 = require('../assets/images/users/user2.jpeg');

@@ -8,10 +8,10 @@ import {
   TouchableOpacity,
   FlatList,
 } from 'react-native';
-import Downarrowicon1 from '../assets/icons/Downicon';
-import Calendericon from '../assets/icons/Calender';
-import Shareicon1 from '../assets/icons/Shareicon';
-import Radiobuttom1 from '../assets/icons/Radiubutton';
+import Downarrowicon1 from '../assets/icons/downicon';
+import Calendericon from '../assets/icons/calender';
+import Shareicon1 from '../assets/icons/shareicon';
+import Radiobuttom1 from '../assets/icons/radiubutton';
 
 const ExpenseModal = ({visible, onClose, onSubmit}) => {
   const [expenseName, setExpenseName] = useState('');

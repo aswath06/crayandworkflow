@@ -1,10 +1,10 @@
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
-import Header from './TextWithNumber';
-import Downarrowicon1 from '../assets/icons/Downicon';
-import Listtask from './ListTask';
-import BottomModal from './BottomModal';
+import Header from './textwithnumber';
+import Downarrowicon1 from '../assets/icons/downicon';
+import Listtask from './listtask';
+import BottomModal from './bottommodal';
 
 export default function Taskdetails() {
   const navigation = useNavigation();

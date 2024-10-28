@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Modal, View, Text, TouchableOpacity, StyleSheet} from 'react-native';
-import Closeicon from '../assets/icons/Closeicon';
-import Tickicon from '../assets/icons/Tick';
+import Closeicon from '../assets/icons/closeicon';
+import Tickicon from '../assets/icons/tick';
 
 export default function BottomModal({visible, onClose, setSelectedStatus}) {
   const [selectedStatusLocal, setSelectedStatusLocal] = useState(''); // Local state
