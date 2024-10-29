@@ -1,12 +1,18 @@
-import {StyleSheet, View, Text, FlatList} from 'react-native';
-import React, {useState} from 'react';
+// src/components/Logexpense/Logexpense.jsx
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, View, Text, FlatList } from 'react-native';
 import Header from './TextWithNumber';
-import Addicon1 from '../assets/icons/AddIcon';
+import Addicon1 from '../assets/icons/addicon';
 import ExpenseModal from './ExpenseModal';
+import useExpenseStore from '../zustand/UseExpenseStore';
 
 export default function Logexpense() {
+  const { expenses, addExpense } = useExpenseStore();
   const [modalVisible, setModalVisible] = useState(false);
-  const [expenses, setExpenses] = useState([]);
+
+  useEffect(() => {
+    console.log('Current expenses:', expenses);
+  }, [expenses]); 
 
   const handleAddIconClick = () => {
     setModalVisible(true);
@@ -16,13 +22,15 @@ export default function Logexpense() {
     setModalVisible(false);
   };
 
-  const handleSubmitExpense = expense => {
-    setExpenses(prevExpenses => [...prevExpenses, expense]);
+  const handleSubmitExpense = (expense) => {
+    addExpense(expense);
+    console.log('Added expense:', expense); 
+    console.log('Updated expenses:', [...expenses, expense]); 
     handleCloseModal();
   };
 
   const Separator = () => <View style={styles.separator} />;
-
+  
   const NoDataComponent = () => (
     <View style={styles.noDataContainer}>
       <Text style={styles.noDataText}>No data found</Text>
@@ -46,19 +54,19 @@ export default function Logexpense() {
       <ExpenseModal
         visible={modalVisible}
         onClose={handleCloseModal}
-        onSubmit={handleSubmitExpense}
+        onSubmit={handleSubmitExpense} 
       />
 
       <FlatList
         data={expenses}
         keyExtractor={(item, index) => index.toString()}
-        renderItem={({item}) => (
+        renderItem={({ item }) => (
           <View style={styles.expenseDetailsContainer}>
             <Text style={styles.expenseName}>{item.name}</Text>
             <View style={styles.dot} />
             <Text style={styles.expenseDate}>{item.date}</Text>
             <View style={styles.dot} />
-            <Text style={styles.expenseAmount}>{item.amount} AED</Text>
+            <Text style={styles.expenseAmount}>{item.amount} {item.currency}</Text>
           </View>
         )}
         ItemSeparatorComponent={Separator}
@@ -69,6 +77,7 @@ export default function Logexpense() {
 }
 
 const styles = StyleSheet.create({
+  // Your styles here...
   container: {
     backgroundColor: 'white',
     padding: 15,

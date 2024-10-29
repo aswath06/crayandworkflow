@@ -1,11 +1,15 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
-import {Navigation} from './src/navigation/Index';
-
-const Stack = createNativeStackNavigator();
+import { NavigationContainer } from '@react-navigation/native';
+import { Provider } from 'react-redux'; 
+import store from './src/redux/Store';
+import { Navigation } from './src/navigation/Index'; 
 
 export const App = () => {
-  return <Navigation />;
+  return (
+    <Provider store={store}>
+      <NavigationContainer>
+        <Navigation /> 
+      </NavigationContainer>
+    </Provider>
+  );
 };

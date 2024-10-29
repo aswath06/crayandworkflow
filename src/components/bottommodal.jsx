@@ -4,7 +4,7 @@ import Closeicon from '../assets/icons/CloseIcon';
 import Tickicon from '../assets/icons/Tick';
 
 export default function BottomModal({visible, onClose, setSelectedStatus}) {
-  const [selectedStatusLocal, setSelectedStatusLocal] = useState(''); // Local state
+  const [selectedStatusLocal, setSelectedStatusLocal] = useState('');
 
   const handleStatusPress = status => {
     setSelectedStatusLocal(status);

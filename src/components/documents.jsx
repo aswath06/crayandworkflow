@@ -1,6 +1,6 @@
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React from 'react';
-import {useNavigation} from '@react-navigation/native'; // Ensure you have navigation setup
+import {useNavigation} from '@react-navigation/native'; 
 import Header from './TextWithNumber';
 import Righticon1 from '../assets/icons/RightIcon';
 
@@ -10,7 +10,7 @@ export default function Documents() {
   return (
     <TouchableOpacity
       style={styles.cardContainer}
-      onPress={() => navigation.navigate('DocumentPage')} // Replace 'DocumentPage' with your document page route name
+      onPress={() => navigation.navigate('DocumentPage')} 
     >
       <View>
         <Header

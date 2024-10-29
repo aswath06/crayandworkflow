@@ -3,10 +3,10 @@ import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 
 export default function Folder({ folderName, documentCount, style }) {
-  const navigation = useNavigation(); // Access navigation
+  const navigation = useNavigation(); 
 
   const handlePress = () => {
-    navigation.navigate('Filepage'); // Navigate to FilePage on press
+    navigation.navigate('Filepage'); 
   };
 
   return (
