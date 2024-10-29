@@ -1,7 +1,7 @@
 import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
-import Downarrowicon1 from '../assets/icons/DownIcon';
+import Downarrowicon1 from '../assets/icons/Downicon';
 
 export default function DetailProjectInfoCard({status}) {
   const navigation = useNavigation();

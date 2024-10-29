@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, View, Text, FlatList } from 'react-native';
 import Header from './TestWithNumber';
-import Addicon1 from '../assets/icons/addicon';
+import Addicon1 from '../assets/icons/AddIcon';
 import ExpenseModal from './ExpenseModal';
 import useExpenseStore from '../zustand/UseExpenseStore';
 

@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
   FlatList,
 } from 'react-native';
-import Downarrowicon1 from '../assets/icons/DownIcon';
+import Downarrowicon1 from '../assets/icons/Downicon';
 import Calendericon from '../assets/icons/Calender';
 import Shareicon1 from '../assets/icons/ShareIcon';
 import Radiobuttom1 from '../assets/icons/RadiuButton';
