@@ -1,7 +1,7 @@
 // src/components/Logexpense/Logexpense.jsx
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, View, Text, FlatList } from 'react-native';
-import Header from './TextWithNumber';
+import Header from './TestWithNumber';
 import Addicon1 from '../assets/icons/addicon';
 import ExpenseModal from './ExpenseModal';
 import useExpenseStore from '../zustand/UseExpenseStore';

@@ -1,7 +1,7 @@
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {useNavigation} from '@react-navigation/native'; 
-import Header from './TextWithNumber';
+import Header from './TestWithNumber';
 import Righticon1 from '../assets/icons/RightIcon';
 
 export default function Documents() {

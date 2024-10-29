@@ -1,7 +1,7 @@
 import {StyleSheet, View, TouchableOpacity, Text} from 'react-native';
 import React from 'react';
 import Tickicon from '../assets/icons/Tick';
-import Header from './TextWithNumber';
+import Header from './TestWithNumber';
 
 const CustomCheckbox = ({label, isChecked, onToggle}) => {
   return (
